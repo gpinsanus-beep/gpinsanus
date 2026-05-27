@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-oxanium: "Oxanium", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace;
+
+  --color-neon-blue: #00f3ff;
+  --color-neon-dark: #0088cc;
+  --color-insanus-red: #ff3333;
+  --color-dark-bg: #030305;
+  --color-metallic-gray: #1b1c22;
+
+  --animate-pulse-glow: pulse-glow 2s infinite ease-in-out;
+  --animate-float: float 6s infinite ease-in-out;
+  --animate-flicker: flicker 0.15s infinite;
+  --animate-scanline: scanline 8s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 8px rgba(0, 243, 255, 0.1);
+    border-color: rgba(0, 243, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.8), inset 0 0 16px rgba(0, 243, 255, 0.3);
+    border-color: rgba(0, 243, 255, 1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Custom scrollbar and premium utility styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030305;
+}
+::-webkit-scrollbar-thumb {
+  background: #11141c;
+  border: 2px solid #030305;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f3ff;
+}
+
+/* Cyberpunk decorative elements and Frosted Glass theme overrides */
+.metallic-border {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-header {
+  background: rgba(5, 5, 5, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.7), 0 0 25px rgba(0, 243, 255, 0.3);
+}
+
+.neon-red-text {
+  text-shadow: 0 0 12px rgba(255, 51, 51, 0.7), 0 0 25px rgba(255, 51, 51, 0.3);
+}
+
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+}
+
+.text-stroke-neon {
+  -webkit-text-stroke: 1px #00f3ff;
+  color: transparent;
+}
+
+/* Smoke and particles ambient */
+.smoky-overlay {
+  background: radial-gradient(circle at 50% 50%, rgba(3, 3, 5, 0) 0%, #030305 85%);
+}

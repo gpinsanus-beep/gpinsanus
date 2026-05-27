@@ -1,0 +1,6 @@
+{
+  "name": "INSANUS ⚔️",
+  "description": "Site oficial cinematográfico de O Clã INSANUS — Formado por cinco amigos obcecados por fisiculturismo hardcore, disciplina, fúria gamer-cyberpunk e evolução física.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
