@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Swords, ChevronDown } from "lucide-react";
 
 // Reference paths to the generated images
-const LOGO_IMG_PATH = "/src/assets/images/insanus_logo_1779915309731.png";
+const LOGO_IMG_PATH = "https://i.postimg.cc/VvgZzV7d/Chat-GPT-Image-27-de-mai-de-2026-18-46-56.png";
 const BG_IMG_PATH = "/src/assets/images/cyberpunk_gym_1779915328481.png";
 
 interface HeroProps {
@@ -48,31 +48,48 @@ export default function Hero({ onExploreClick }: HeroProps) {
 
         {/* Pulsing Cinematic Titan Shield Logo */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, type: "spring" }}
-          className="relative w-72 h-72 md:w-85 md:h-85 flex items-center justify-center cursor-pointer group"
+          className="relative w-80 h-80 md:w-[440px] md:h-[440px] flex items-center justify-center cursor-pointer group"
         >
+          {/* Animated smoke drifting effect behind the logo */}
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-[#050505] via-cyan-950/20 to-transparent filter blur-3xl opacity-60 animate-smoke-pack pointer-events-none z-0" />
+
+          {/* Glowing neon ring simulating a circular electric border with intensity */}
+          <div className="absolute inset-8 rounded-full border-2 border-cyan-500/25 animate-pulse shadow-[0_0_40px_rgba(0,243,255,0.3)] pointer-events-none z-0" />
+          <div className="absolute inset-2 rounded-full border border-dashed border-cyan-400/10 animate-[spin_60s_linear_infinite] pointer-events-none z-0" />
+
+          {/* Animated Neon Lightning bolts/sparks surrounding the logo image */}
+          {/* Top-Right Spark */}
+          <svg className="absolute -top-10 -right-10 w-24 h-24 text-cyan-400 opacity-0 pointer-events-none z-20 animate-lightning-bolt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          {/* Bottom-Left Spark */}
+          <svg className="absolute -bottom-10 -left-10 w-24 h-24 text-cyan-300 opacity-0 pointer-events-none z-20 animate-lightning-bolt-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+
           {/* Outer Ring Ambient Pulses */}
-          <div className="absolute inset-0 rounded-full bg-cyan-500/10 filter blur-2xl group-hover:bg-cyan-500/20 transition-all duration-700 animate-pulse-glow" />
+          <div className="absolute inset-0 rounded-full bg-cyan-500/15 filter blur-3xl group-hover:bg-cyan-500/25 transition-all duration-700 animate-pulse-glow" />
           
-          <motion.img
-            src={LOGO_IMG_PATH}
-            alt="INSANUS Logo"
-            className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_25px_rgba(0,243,255,0.45)] group-hover:scale-105 group-hover:rotate-1 transition-transform duration-500"
-            animate={{ 
-              y: [0, -6, 0],
-              filter: [
-                "drop-shadow(0 0 20px rgba(0, 243, 255, 0.4))",
-                "drop-shadow(0 0 35px rgba(0, 243, 255, 0.7))",
-                "drop-shadow(0 0 20px rgba(0, 243, 255, 0.4))"
-              ]
-            }}
-            transition={{ 
-              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              filter: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-            }}
-          />
+          <div className="relative z-10 w-full h-full flex items-center justify-center overflow-hidden rounded-full">
+            {/* Reflective metallic shine overlay traveling across the logo */}
+            <div className="metallic-shine-overlay" />
+            
+            <motion.img
+              src={LOGO_IMG_PATH}
+              alt="INSANUS Logo"
+              referrerPolicy="no-referrer"
+              className="w-[90%] h-[90%] object-contain filter drop-shadow-[0_0_35px_rgba(0,243,255,0.6)] group-hover:scale-105 group-hover:rotate-1 transition-transform duration-500 animate-electric-pulse"
+              animate={{ 
+                y: [0, -8, 0],
+              }}
+              transition={{ 
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+              }}
+            />
+          </div>
         </motion.div>
 
         {/* Aggressive Typographic Slogan */}

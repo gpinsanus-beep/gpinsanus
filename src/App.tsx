@@ -91,7 +91,7 @@ export default function App() {
                 activeTab === "hero" ? "text-[#00f3ff] font-bold" : "text-zinc-400 hover:text-white"
               }`}
             >
-              HOME
+              INÍCIO
             </button>
             <button
               onClick={() => scrollToSection("historia")}
@@ -115,7 +115,7 @@ export default function App() {
                 activeTab === "produtos" ? "text-[#00f3ff] font-bold" : "text-zinc-400 hover:text-white"
               }`}
             >
-              FUTURE DROP
+              LANÇAMENTOS
             </button>
             <button
               onClick={() => scrollToSection("sociais")}
@@ -133,7 +133,7 @@ export default function App() {
               onClick={() => scrollToSection("produtos")}
               className="px-4 py-2 bg-gradient-to-r from-zinc-950 to-zinc-900 border border-[#00f3ff]/40 rounded text-[11px] font-oxanium uppercase font-extrabold tracking-widest text-[#00f3ff] hover:bg-[#00f3ff] hover:text-zinc-950 hover:border-[#00f3ff] cursor-pointer transition-all duration-300 shadow-[0_0_15px_rgba(0,243,255,0.15)]"
             >
-              DROP LIST
+              ARSENAL
             </button>
           </div>
 
@@ -159,7 +159,7 @@ export default function App() {
             onClick={() => scrollToSection("hero")}
             className="text-left font-oxanium text-sm uppercase tracking-widest font-black text-zinc-300 hover:text-cyan-400 transition-colors"
           >
-            HOME
+            INÍCIO
           </button>
           <button
             onClick={() => scrollToSection("historia")}
@@ -177,7 +177,7 @@ export default function App() {
             onClick={() => scrollToSection("produtos")}
             className="text-left font-oxanium text-sm uppercase tracking-widest font-black text-zinc-300 hover:text-cyan-400 transition-colors"
           >
-            FUTURE DROP
+            LANÇAMENTOS
           </button>
           <button
             onClick={() => scrollToSection("sociais")}

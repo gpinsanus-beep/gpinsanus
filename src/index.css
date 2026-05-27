@@ -103,5 +103,75 @@
 
 /* Smoke and particles ambient */
 .smoky-overlay {
-  background: radial-gradient(circle at 50% 50%, rgba(3, 3, 5, 0) 0%, #030305 85%);
+  background: radial-gradient(circle at 50% 50%, rgba(3, 3, 5, 0) 0%, #050505 85%);
 }
+
+/* Custom electric & metal cinematic keyframes */
+@keyframes electric-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.5)) drop-shadow(0 0 30px rgba(0, 243, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(0, 243, 255, 0.95)) drop-shadow(0 0 60px rgba(0, 243, 255, 0.45));
+  }
+}
+
+@keyframes lightning-flash {
+  0%, 100% { opacity: 0; transform: scale(0.9) rotate(0deg); }
+  5% { opacity: 0.85; transform: scale(1) rotate(-2deg); }
+  7% { opacity: 0.2; }
+  9% { opacity: 0.9; transform: scale(1.05) rotate(1deg); }
+  12% { opacity: 0; }
+  45% { opacity: 0; }
+  47% { opacity: 0.7; transform: scale(0.98) rotate(3deg); }
+  49% { opacity: 0; }
+}
+
+@keyframes smoke-drift {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); opacity: 0.25; }
+  50% { transform: translate(-47%, -53%) rotate(180deg) scale(1.15); opacity: 0.45; }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); opacity: 0.25; }
+}
+
+@keyframes metallic-shine-flow {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.animate-electric-pulse {
+  animation: electric-glow-pulse 3s infinite ease-in-out;
+}
+
+.animate-lightning-bolt-1 {
+  animation: lightning-flash 6s infinite ease-in-out;
+}
+
+.animate-lightning-bolt-2 {
+  animation: lightning-flash 4.5s infinite ease-in-out 2s;
+}
+
+.animate-smoke-pack {
+  animation: smoke-drift 12s infinite linear;
+}
+
+.metallic-shine-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.12) 55%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: metallic-shine-flow 8s infinite linear;
+  pointer-events: none;
+  z-index: 12;
+}
+
